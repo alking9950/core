@@ -936,7 +936,7 @@ width: 50%;
 <meta expr:content='data:skin.vars.body_background' name='msapplication-TileColor'/>
 <meta expr:content='data:skin.vars.body_background' name='msapplication-navbutton-color'/>
 <meta expr:content='data:skin.vars.body_background' name='apple-mobile-web-app-status-bar-style'/>
-<meta content='yes' name='apple-mobile-web-app-capable'/>
+<meta content='yes' name='mobile-web-app-capable'/>
 
 <!-- Title -->
 <b:with value='data:view.isHomepage ? data:blog.title + (data:skin.vars.tagline ? data:skin.vars.separator + data:skin.vars.tagline : &quot;&quot;) : data:view.isError ? &quot;404 (Error) Not Found&quot; + data:skin.vars.separator + data:blog.title : data:blog.pageName ? data:blog.pageName + data:skin.vars.separator + data:blog.title :  &quot;Latest Posts&quot; + data:skin.vars.separator + data:blog.title' var='meta_title'>
@@ -2519,3 +2519,4 @@ function jtCallback(){
 <b:if cond='!data:view.isPreview'>&lt;textarea disabled readonly id=&quot;element-b&quot; style=&quot;display:none&quot;&gt;&lt;style&gt;/*</b:if></body><b:if cond='!data:view.isPreview'>*/&lt;/style&gt;&lt;/textarea&gt;<script>/*<![CDATA[*/const _eh=document.getElementById("element-h"),_eb=document.getElementById("element-b"),_WidgetManager={_PopupConfig:function(){}};null!==_eh&&(_eh.outerHTML=""),null!==_eb&&(_eb.outerHTML="");/*]]>*/</script>
 &lt;/body&gt;</b:if>
 </html>
+
