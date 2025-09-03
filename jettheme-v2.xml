@@ -192,6 +192,9 @@ line-height: 1.5;
 -moz-osx-font-smoothing: grayscale;
 text-rendering: optimizeLegibility;
 }
+html[dir="rtl"] body {
+font-family: 'Cairo', var(--bs-font-sans-serif);
+}
 .d-block {
 display:none;
 }
@@ -939,7 +942,7 @@ width: 50%;
 <meta content='yes' name='mobile-web-app-capable'/>
 
 <!-- Title -->
-<b:with value='data:view.isHomepage ? data:blog.title + (data:skin.vars.tagline ? data:skin.vars.separator + data:skin.vars.tagline : &quot;&quot;) : data:view.isError ? &quot;404 (Error) Not Found&quot; + data:skin.vars.separator + data:blog.title : data:blog.pageName ? data:blog.pageName + data:skin.vars.separator + data:blog.title :  &quot;Latest Posts&quot; + data:skin.vars.separator + data:blog.title' var='meta_title'>
+<b:with value='data:view.isHomepage ? data:blog.title + (data:skin.vars.tagline ? data:skin.vars.separator + data:skin.vars.tagline : &quot;&quot;) : data:view.isError ? &quot;404 غير موجود&quot; + data:skin.vars.separator + data:blog.title : data:blog.pageName ? data:blog.pageName + data:skin.vars.separator + data:blog.title :  &quot;آخر المقالات&quot; + data:skin.vars.separator + data:blog.title' var='meta_title'>
 <title><data:meta_title/></title>
 <meta expr:content='data:meta_title' name='title'/>
 <meta expr:content='data:meta_title' property='og:title'/>
@@ -981,7 +984,10 @@ width: 50%;
 <b:if cond='data:view.isHomepage'>
 <script type='application/ld+json'>{&quot;@context&quot;:&quot;https://schema.org&quot;,&quot;@type&quot;:&quot;WebSite&quot;,&quot;url&quot;:&quot;<data:blog.canonicalHomepageUrl/>&quot;,&quot;name&quot;:&quot;<data:blog.title/>&quot;,&quot;potentialAction&quot;:{&quot;@type&quot;:&quot;SearchAction&quot;,&quot;target&quot;:&quot;<data:blog.canonicalHomepageUrl/>search?q={search_term_string}&amp;max-results=10&quot;,&quot;query-input&quot;:&quot;required name=search_term_string&quot;}}</script>
 </b:if>
-<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css' media='print' onload='if(media!=&quot;all&quot;)media=&quot;all&quot;' rel='stylesheet'/><noscript><link href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css' rel='stylesheet'/></noscript>
+<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.rtl.min.css' media='print' onload='if(media!=&quot;all&quot;)media=&quot;all&quot;' rel='stylesheet'/><noscript><link href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.rtl.min.css' rel='stylesheet'/></noscript>
+<link rel='preconnect' href='https://fonts.googleapis.com'/>
+<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin='anonymous'/>
+<link href='https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap' rel='stylesheet'/>
 </b:includable>
 </b:defaultmarkup>
 </b:defaultmarkups>
@@ -991,7 +997,7 @@ width: 50%;
 <b:if cond='!data:view.isPreview'>&lt;/head&gt;&lt;body class=&quot;d-block <b:include name='JetBodyClass'/>&quot;&gt;&lt;textarea disabled readonly id=&quot;element-h&quot; style=&quot;display:none&quot;&gt;&lt;style&gt;/*</b:if></head><body><b:if cond='!data:view.isPreview'>*/&lt;/style&gt;&lt;/textarea&gt;</b:if>
 
 <b:section cond='data:view.isLayoutMode' id='upload-image' showaddelement='no'>
-  <b:widget id='Image10' locked='true' title='Upload Image' type='Image' visible='true'>
+  <b:widget id='Image10' locked='true' title='رفع صورة' type='Image' visible='true'>
     <b:widget-settings>
       <b:widget-setting name='displayUrl'>https://1.bp.blogspot.com/-h5fUZDgfXe8/YR87osMq6UI/AAAAAAAAAYk/18JeDAzajvYhKnMnllSf_DSWAm51cueuQCLcBGAsYHQ/s728/placeholder.jpg</b:widget-setting>
       <b:widget-setting name='displayHeight'>425</b:widget-setting>
@@ -1034,21 +1040,21 @@ width: 50%;
   </b:widget>
   <b:widget id='LinkList11' locked='true' title='Menu' type='LinkList' version='2' visible='true'>
     <b:widget-settings>
-      <b:widget-setting name='text-8'>Contact</b:widget-setting>
+      <b:widget-setting name='text-8'>اتصل بنا</b:widget-setting>
       <b:widget-setting name='link-7'>/p/sitemap.html</b:widget-setting>
       <b:widget-setting name='link-8'>/p/contact.html</b:widget-setting>
       <b:widget-setting name='link-5'>#</b:widget-setting>
       <b:widget-setting name='link-6'>#sub-end</b:widget-setting>
       <b:widget-setting name='link-3'>#sub-start</b:widget-setting>
       <b:widget-setting name='link-4'>#</b:widget-setting>
-      <b:widget-setting name='text-1'>About</b:widget-setting>
-      <b:widget-setting name='text-0'>Home</b:widget-setting>
-      <b:widget-setting name='text-3'>Sub Menu 1</b:widget-setting>
-      <b:widget-setting name='text-2'>Tech</b:widget-setting>
-      <b:widget-setting name='text-5'>DropDown</b:widget-setting>
-      <b:widget-setting name='text-4'>DropDown</b:widget-setting>
-      <b:widget-setting name='text-7'>Sitemap</b:widget-setting>
-      <b:widget-setting name='text-6'>Sub Menu 1</b:widget-setting>
+      <b:widget-setting name='text-1'>من نحن</b:widget-setting>
+      <b:widget-setting name='text-0'>الرئيسية</b:widget-setting>
+      <b:widget-setting name='text-3'>قائمة فرعية 1</b:widget-setting>
+      <b:widget-setting name='text-2'>تقنية</b:widget-setting>
+      <b:widget-setting name='text-5'>قائمة منسدلة</b:widget-setting>
+      <b:widget-setting name='text-4'>قائمة منسدلة</b:widget-setting>
+      <b:widget-setting name='text-7'>خريطة الموقع</b:widget-setting>
+      <b:widget-setting name='text-6'>قائمة فرعية 1</b:widget-setting>
       <b:widget-setting name='sorting'>NONE</b:widget-setting>
       <b:widget-setting name='link-1'>/p/about.html</b:widget-setting>
       <b:widget-setting name='link-2'>/search/label/Tech?max-results=10</b:widget-setting>
@@ -1067,7 +1073,7 @@ width: 50%;
 <div class='container px-0'>
 <div class='d-lg-flex' id='main-content'>
 <div class='col-lg-8 px-3' id='main'>
-<b:if cond='data:view.isMultipleItems and !data:view.isError or !data:numPosts == 0'><b:with value='data:view.isHomepage ? &quot;Homepage &quot; + data:blog.title : data:blog.pageName ? data:blog.pageName : &quot;Latest Posts&quot;' var='auto_heading'><h1 class='d-none'><data:auto_heading/></h1></b:with></b:if>
+<b:if cond='data:view.isMultipleItems and !data:view.isError or !data:numPosts == 0'><b:with value='data:view.isHomepage ? &quot;الصفحة الرئيسية &quot; + data:blog.title : data:blog.pageName ? data:blog.pageName : &quot;آخر المقالات&quot;' var='auto_heading'><h1 class='d-none'><data:auto_heading/></h1></b:with></b:if>
 <b:section class='pt-4' cond='data:view.isMultipleItems and !data:view.search.query' id='before-blog' showaddelement='yes'>
   <b:widget id='HTML11' locked='false' title='#Advertisement' type='HTML' visible='true'>
     <b:widget-settings>
@@ -1077,7 +1083,7 @@ width: 50%;
       <b:include name='JetHtml'/>
     </b:includable>
   </b:widget>
-  <b:widget cond='data:view.isHomepage or data:view.url.canonical == data:blog.canonicalHomepageUrl path &quot;/search?max-results=10&quot;' id='FeaturedPost1' locked='false' title='Featured Post' type='FeaturedPost' visible='true'>
+  <b:widget cond='data:view.isHomepage or data:view.url.canonical == data:blog.canonicalHomepageUrl path &quot;/search?max-results=10&quot;' id='FeaturedPost1' locked='false' title='مقال مميز' type='FeaturedPost' visible='true'>
     <b:widget-settings>
       <b:widget-setting name='showSnippet'>true</b:widget-setting>
       <b:widget-setting name='showPostTitle'>true</b:widget-setting>
@@ -1397,7 +1403,7 @@ width: 50%;
 <div class='py-5 fs-7' id='footer-main'>
   <div class='container px-3'>
     <b:section class='row row-cols-sm-2 row-cols-lg-4 justify-content-evenly' id='footer-widget' showaddelement='yes'>
-      <b:widget id='HTML21' locked='false' title='About Us' type='HTML' visible='true'>
+      <b:widget id='HTML21' locked='false' title='نبذة عنا' type='HTML' visible='true'>
         <b:widget-settings>
           <b:widget-setting name='content'><![CDATA[<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultricies, sapien et auctor bibendum, magna urna posuere purus, at vehicula erat est ac sem.</p>]]></b:widget-setting>
         </b:widget-settings>
@@ -1405,13 +1411,13 @@ width: 50%;
       <b:include name='JetHtml'/>
     </b:includable>
       </b:widget>
-      <b:widget id='LinkList13' locked='false' title='Learn More' type='LinkList' version='2' visible='true'>
+      <b:widget id='LinkList13' locked='false' title='اعرف المزيد' type='LinkList' version='2' visible='true'>
         <b:widget-settings>
           <b:widget-setting name='link-3'>https://jettheme-demo.blogspot.com/p/privacy-policy.html</b:widget-setting>
           <b:widget-setting name='sorting'>NONE</b:widget-setting>
-          <b:widget-setting name='text-1'>Disclaimer</b:widget-setting>
+          <b:widget-setting name='text-1'>إخلاء المسؤولية</b:widget-setting>
           <b:widget-setting name='link-1'>#</b:widget-setting>
-          <b:widget-setting name='text-0'>Advertise</b:widget-setting>
+          <b:widget-setting name='text-0'>إعلان</b:widget-setting>
           <b:widget-setting name='link-2'>https://www.jettheme.com/p/change-log.html</b:widget-setting>
           <b:widget-setting name='text-3'>Privacy Policy</b:widget-setting>
           <b:widget-setting name='link-0'>#</b:widget-setting>
@@ -1475,7 +1481,7 @@ width: 50%;
 </div>
 </footer>
 
-<div class='position-fixed d-none' id='back-to-top' style='right:20px;bottom:20px'><a aria-label='Back to Top' class='btn btn-sm jt-btn-light rounded-circle jt-icon-center' href='#back-to-top' onclick='window.scroll({top:0,left: 0,behavior:&apos;smooth&apos;});'><svg aria-hidden='true' class='jt-icon' height='1em' width='1em'><use xlink:href='#i-arrow-t'/></svg></a></div>
+<div class='position-fixed d-none' id='back-to-top' style='right:20px;bottom:20px'><a aria-label='العودة إلى الأعلى' class='btn btn-sm jt-btn-light rounded-circle jt-icon-center' href='#back-to-top' onclick='window.scroll({top:0,left: 0,behavior:&apos;smooth&apos;});'><svg aria-hidden='true' class='jt-icon' height='1em' width='1em'><use xlink:href='#i-arrow-t'/></svg></a></div>
 
 <b:section class='d-none' id='jet-options' maxwidgets='5' showaddelement='no'>
   <b:widget id='HTML24' locked='true' title='SVG Icons' type='HTML' version='2' visible='true'>
@@ -1545,7 +1551,7 @@ width: 50%;
 <b:if cond='data:post.featuredImage'>
 <div class='item-thumbnail me-3' style='width:85px'>
 <a class='rounded jt-bg-light overflow-hidden d-block ratio ratio-1x1' expr:href='data:post.url.canonical'>
-<img expr:alt='data:post.title' expr:class='data:post.featuredImage.isYoutube ?  &quot;object-cover lazyload&quot; : &quot;lazyload&quot;' expr:data-src='data:post.featuredImage.isYoutube ? data:post.featuredImage.youtubeMaxResDefaultUrl : data:post.featuredImage' loading='lazy' src='data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='/>
+<img expr:alt='data:post.title' expr:class='data:post.featuredImage.isYoutube ?  &quot;object-cover lazyload&quot; : &quot;lazyload&quot;' expr:data-src='data:post.featuredImage.isYoutube ? data:post.featuredImage.youtubeMaxResDefaultUrl : data:post.featuredImage' loading='lazy' decoding='async' src='data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='/>
 </a>
 </div>
 </b:if>
@@ -1618,7 +1624,7 @@ width: 50%;
       <b:include name='JetWidgetTitle'/>
       <div class='widget-content follow-by-email'>
         <div class='mb-3'><data:content/></div>
-        <form action='https://api.follow.it/subscribe?pub=CQoJCcEXztieMrPUAQYKlNRPCjlhk9FW' method='post' target='_blank'><div class='input-group rounded-pill overflow-hidden border border-2 jt-border-light' style='max-width:400px'><input aria-label='Email Address' class='form-control fs-7 bg-transparent border-0 text-reset py-2' id='newsletter-email' name='email' placeholder='Email Address' required='required' type='email'/><button aria-label='Submit Button' class='btn py-0 border-0 text-reset fs-5' type='submit'><svg aria-hidden='true' class='jt-icon'><use xlink:href='#i-mail'/></svg></button></div></form>
+        <form action='https://api.follow.it/subscribe?pub=CQoJCcEXztieMrPUAQYKlNRPCjlhk9FW' method='post' target='_blank'><div class='input-group rounded-pill overflow-hidden border border-2 jt-border-light' style='max-width:400px'><input aria-label='البريد الإلكتروني' class='form-control fs-7 bg-transparent border-0 text-reset py-2' id='newsletter-email' name='email' placeholder='البريد الإلكتروني' required='required' type='email'/><button aria-label='زر الإرسال' class='btn py-0 border-0 text-reset fs-5' type='submit'><svg aria-hidden='true' class='jt-icon'><use xlink:href='#i-mail'/></svg></button></div></form>
       </div>
     </b:includable>
     <b:includable id='JetLogo'>
@@ -1630,7 +1636,7 @@ width: 50%;
       <b:elseif cond='data:content contains &quot;data:image/&quot; OR  data:content contains &quot;https://&quot;'/>
         <b:class name='logo-wrap position-relative'/>
         <a class='d-block navbar-brand' expr:href='data:blog.canonicalHomepageUrl'>
-          <img expr:alt='data:blog.title' expr:src='data:content' height='55' loading='lazy' width='175'/>
+          <img expr:alt='data:blog.title' expr:src='data:content' height='55' loading='lazy' decoding='async' width='175'/>
         </a>
       <b:else/>
         <a class='navbar-brand fw-bold' expr:href='data:blog.canonicalHomepageUrl'>
@@ -1654,24 +1660,24 @@ width: 50%;
       </b:if>
       <b:if cond='data:title not contains &quot;#Dark&quot;'>
       <div class='d-flex align-self-stretch align-items-center ps-1' id='dark-header'>
-        <label aria-label='Toggle Dark Mode' class='p-2 jt-icon-center' id='dark-toggler'><svg aria-hidden='true' class='jt-icon'><use class='icon-light' xlink:href='#i-moon'/><use class='icon-dark' xlink:href='#i-sun'/></svg></label>
+        <label aria-label='تبديل الوضع الداكن' class='p-2 jt-icon-center' id='dark-toggler'><svg aria-hidden='true' class='jt-icon'><use class='icon-light' xlink:href='#i-moon'/><use class='icon-dark' xlink:href='#i-sun'/></svg></label>
       </div>
       </b:if>
       <b:if cond='data:title not contains &quot;#Search&quot;'>
       <div class='d-flex align-self-stretch align-items-center position-md-relative' id='search-header'>
         <input class='d-none' id='search-toggle' type='checkbox'/>
-        <label aria-label='Toggle search' class='p-2 check-text-primary hover-text-primary jt-icon-center' for='search-toggle' id='search-toggler'><svg aria-hidden='true' class='fs-5 jt-icon'><use xlink:href='#i-search'/></svg></label>
+        <label aria-label='تبديل البحث' class='p-2 check-text-primary hover-text-primary jt-icon-center' for='search-toggle' id='search-toggler'><svg aria-hidden='true' class='fs-5 jt-icon'><use xlink:href='#i-search'/></svg></label>
         <div class='dropdown-menu p-1 shadow-sm d-block-check'>
           <form class='input-group' expr:action='data:blog.searchUrl' method='GET' target='_top'> 
-            <input class='form-control fs-7 border-0 rounded-0 bg-transparent text-reset' expr:value='data:view.isSearch ? data:view.search.query : &quot;&quot;' id='search-input' name='q' placeholder='Enter your search' required='required' type='text'/>
+            <input class='form-control fs-7 border-0 rounded-0 bg-transparent text-reset' expr:value='data:view.isSearch ? data:view.search.query : &quot;&quot;' id='search-input' name='q' placeholder='ابحث هنا' required='required' type='text'/>
             <input name='max-results' type='hidden' value='10'/>
-            <button class='btn btn-sm fw-bold py-2 px-4 rounded-pill border-0 jt-btn-primary m-0' type='submit'>Search</button>
+            <button class='btn btn-sm fw-bold py-2 px-4 rounded-pill border-0 jt-btn-primary m-0' type='submit'>بحث</button>
           </form>
         </div>
       </div>
       </b:if>
       <div class='d-flex align-self-stretch align-items-center d-lg-none'>
-        <label aria-label='Toggle navigation' class='p-1 jt-icon-center hover-text-primary' for='navbar-toggle' id='navbar-toggler'><svg aria-hidden='true' class='fs-3 jt-icon'><use xlink:href='#i-menu'/></svg></label>
+        <label aria-label='تبديل القائمة' class='p-1 jt-icon-center hover-text-primary' for='navbar-toggle' id='navbar-toggler'><svg aria-hidden='true' class='fs-3 jt-icon'><use xlink:href='#i-menu'/></svg></label>
       </div>
     </b:includable>
     <b:includable id='JetCopyRight'>
@@ -1680,7 +1686,7 @@ width: 50%;
     <b:includable id='JetProfile'>
       <b:include name='JetWidgetTitle'/>
       <div class='widget-content'>
-        <img class='profile-img' expr:alt='data:messages.myPhoto' expr:height='data:authorPhoto.height' expr:src='data:authorPhoto.image' expr:width='data:authorPhoto.width'/>
+        <img class='profile-img' expr:alt='data:messages.myPhoto' expr:height='data:authorPhoto.height' expr:src='data:authorPhoto.image' expr:width='data:authorPhoto.width' decoding='async'/>
         <data:displayname/>
 <data:aboutme/>
       </div>
@@ -1691,7 +1697,7 @@ width: 50%;
 <b:if cond='data:post.featuredImage'>
 <div class='item-thumbnail'>
 <a class='jt-bg-light d-block ratio ratio-16x9' expr:href='data:post.url.canonical' rel='bookmark'>  
-<img expr:alt='data:post.title' expr:class='data:post.featuredImage.isYoutube ?  &quot;object-cover lazyload&quot; : &quot;lazyload&quot;' expr:data-src='data:post.featuredImage.isYoutube ? data:post.thumbnailUrl : data:post.featuredImage' loading='lazy' src='data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='/>
+<img expr:alt='data:post.title' expr:class='data:post.featuredImage.isYoutube ?  &quot;object-cover lazyload&quot; : &quot;lazyload&quot;' expr:data-src='data:post.featuredImage.isYoutube ? data:post.thumbnailUrl : data:post.featuredImage' loading='lazy' decoding='async' src='data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='/>
 </a>
 </div>
 </b:if>
@@ -1722,7 +1728,7 @@ width: 50%;
 </b:if>
 </div>
 <span expr:class='&quot;position-absolute top-0 end-0 &quot; + data:post.adminClass'>
-<a class='btn btn-sm jt-btn-light rounded-pill jt-icon-center' expr:href='&quot;https://www.blogger.com/blog/post/edit/&quot; + data:blog.blogId + &quot;/&quot; + data:post.id' rel='nofollow noopener noreferrer' target='_blank' title='Edit post'><svg aria-hidden='true' class='jt-icon'><use xlink:href='#i-edit'/></svg></a>
+<a class='btn btn-sm jt-btn-light rounded-pill jt-icon-center' expr:href='&quot;https://www.blogger.com/blog/post/edit/&quot; + data:blog.blogId + &quot;/&quot; + data:post.id' rel='nofollow noopener noreferrer' target='_blank' title='تعديل المقال'><svg aria-hidden='true' class='jt-icon'><use xlink:href='#i-edit'/></svg></a>
 </span>
 </div>
 </div>
@@ -1733,12 +1739,12 @@ width: 50%;
 <div class='d-sm-flex border-top border-bottom jt-border-light mb-5' id='post-pager'>
 <b:if cond='data:newerPageUrl'>
 <a class='d-block prev-page col-sm-6 py-3 pe-sm-3 border-sm-bottom jt-border-light text-reset text-center text-sm-start' expr:href='data:newerPageUrl.canonical'>
-<span class='d-block pe-2 fs-7 fw-light'><svg aria-hidden='true' class='jt-icon'><use xlink:href='#i-arrow-l'/></svg>Next Post</span>
+<span class='d-block pe-2 fs-7 fw-light'><svg aria-hidden='true' class='jt-icon'><use xlink:href='#i-arrow-l'/></svg>المقال التالي</span>
 </a>
 </b:if>
 <b:if cond='data:olderPageUrl'>
 <a class='d-block next-page col-sm-6 py-3 ps-sm-3 jt-border-light text-center text-sm-end text-reset ms-auto' expr:href='data:olderPageUrl.canonical'>
-<span class='d-block ps-2 fs-7 fw-light'>Previous Post <svg aria-hidden='true' class='jt-icon'><use xlink:href='#i-arrow-r'/></svg></span>
+<span class='d-block ps-2 fs-7 fw-light'>المقال السابق <svg aria-hidden='true' class='jt-icon'><use xlink:href='#i-arrow-r'/></svg></span>
 </a>
 </b:if>
 </div>
@@ -1746,12 +1752,12 @@ width: 50%;
 <div class='d-flex justify-content-evenly visually-hidden' expr:data-label='data:view.search.label' expr:data-pagination='!data:view.isArchive and !data:view.isPost and !data:view.search.query' expr:data-posts='data:posts.size' id='pagination'>
 <b:if cond='data:newerPageUrl'>
 <div class='prev-page me-3'>
-<a class='btn btn-sm jt-btn-primary border-2 py-2 px-4 fw-bold' expr:href='data:newerPageUrl'><svg aria-hidden='true' class='jt-icon'><use xlink:href='#i-arrow-l'/></svg>Prev</a>
+<a class='btn btn-sm jt-btn-primary border-2 py-2 px-4 fw-bold' expr:href='data:newerPageUrl'><svg aria-hidden='true' class='jt-icon'><use xlink:href='#i-arrow-l'/></svg>السابق</a>
 </div>
 </b:if>
 <b:if cond='data:olderPageUrl'>
 <div class='next-page'>
-<a class='btn btn-sm jt-btn-primary border-2 py-2 px-4 fw-bold' expr:href='data:olderPageUrl'>Next<svg aria-hidden='true' class='jt-icon'><use xlink:href='#i-arrow-r'/></svg></a>
+<a class='btn btn-sm jt-btn-primary border-2 py-2 px-4 fw-bold' expr:href='data:olderPageUrl'>التالي<svg aria-hidden='true' class='jt-icon'><use xlink:href='#i-arrow-r'/></svg></a>
 </div>
 </b:if>
 </div>
@@ -1767,7 +1773,7 @@ width: 50%;
 <b:if cond='data:post.featuredImage and data:postDisplay.showFeaturedImage'>
 <div class='item-thumbnail full-width pe-sm-3 col-sm-6'>
 <a class='d-block jt-bg-light overflow-hidden rounded shadow-sm ratio ratio-1x1' expr:href='data:post.url.canonical' rel='bookmark'>
-<img expr:alt='data:post.title' expr:class='data:post.featuredImage.isYoutube ?  &quot;object-cover lazyload&quot; : &quot;lazyload&quot;' expr:data-src='data:post.featuredImage.isYoutube ? data:post.featuredImage.youtubeMaxResDefaultUrl : data:post.featuredImage' loading='lazy' src='data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='/>
+<img expr:alt='data:post.title' expr:class='data:post.featuredImage.isYoutube ?  &quot;object-cover lazyload&quot; : &quot;lazyload&quot;' expr:data-src='data:post.featuredImage.isYoutube ? data:post.featuredImage.youtubeMaxResDefaultUrl : data:post.featuredImage' loading='lazy' decoding='async' src='data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='/>
 </a>
 </div>
 </b:if>
@@ -1813,20 +1819,20 @@ width: 50%;
 <b:if cond='data:view.isMultipleItems'>
 <article id='page-content'>
 <header class='entry-header'>
-<h1 class='entry-title mb-4'>Nothing Here</h1>
+<h1 class='entry-title mb-4'>لا يوجد شيء هنا</h1>
 </header>
 <div class='entry-text text-break mb-5'>
 <b:if cond='data:view.isHomepage'>
-<p>Ready to publish your first post? <a expr:href='&quot;https://www.blogger.com/blog/posts/&quot; + data:blog.blogId'>Get started here.</a></p>
+<p>هل أنت مستعد لنشر أول مقالة؟ <a expr:href='&quot;https://www.blogger.com/blog/posts/&quot; + data:blog.blogId'>ابدأ من هنا.</a></p>
 <b:else/>
-<p>The keyword you were looking for was not found</p>
+<p>لم يتم العثور على الكلمة التي تبحث عنها</p>
 </b:if>
 </div>
 </article>
 <b:else/>
 <article id='page-content'>
 <header class='entry-header'>
-<h1 class='entry-title mb-4'>404 Not Found</h1>
+<h1 class='entry-title mb-4'>404 غير موجود</h1>
 </header>
 <div class='entry-text text-break mb-5'>
 <data:navMessage/>
@@ -1836,15 +1842,15 @@ width: 50%;
 </b:includable>
 	<b:includable id='JetBreadcrumbs' var='post'>
 <b:if cond='data:view.isMultipleItems and !data:view.search.query and !data:view.search.label and !data:view.isArchive'>
-<b:tag class='widget-title position-relative fs-6 mb-3' expr:name='data:view.isHomepage ? &quot;h2&quot; : &quot;div&quot;'><span>Latest Posts</span></b:tag>
+<b:tag class='widget-title position-relative fs-6 mb-3' expr:name='data:view.isHomepage ? &quot;h2&quot; : &quot;div&quot;'><span>آخر المقالات</span></b:tag>
 <b:else/>
 <div itemscope='itemscope' itemtype='https://schema.org/BreadcrumbList' style='--bs-breadcrumb-divider: url(&quot;data:image/svg+xml,%3Csvg xmlns=&apos;http://www.w3.org/2000/svg&apos; height=&apos;8&apos; width=&apos;8&apos; fill=&apos;none&apos; viewbox=&apos;0 0 24 24&apos; stroke=&apos;%23686868&apos;%3E%3Cpath stroke-linecap=&apos;round&apos; stroke-linejoin=&apos;round&apos; stroke-width=&apos;1&apos; d=&apos;M 0.5,0.5 4,4 0.5,7.5&apos;/%3E%3C/svg%3E&quot;);'>
 <ol class='breadcrumb d-block text-nowrap fs-7 overflow-hidden text-truncate'>
 <b:if cond='data:view.search.query'>
-  <li class='breadcrumb-item d-inline-block'>Search for: <data:view.search.query/></li>
+  <li class='breadcrumb-item d-inline-block'>نتائج البحث عن: <data:view.search.query/></li>
 <b:else/>
   <li class='breadcrumb-item d-inline-block' itemprop='itemListElement' itemscope='itemscope' itemtype='https://schema.org/ListItem'>
-    <a expr:href='data:blog.canonicalHomepageUrl' itemprop='item' rel='tag' title='Home'><span itemprop='name'>Home</span></a>
+    <a expr:href='data:blog.canonicalHomepageUrl' itemprop='item' rel='tag' title='الرئيسية'><span itemprop='name'>الرئيسية</span></a>
     <meta content='1' itemprop='position'/>
   </li>
   <b:if cond='data:post.labels'>     
@@ -1894,7 +1900,7 @@ width: 50%;
 <div class='comment-header position-relative d-flex mb-2'>
 <div class='avatar-image me-3 mt-1' style='width:35px'>
 <div class='rounded-pill jt-bg-light overflow-hidden d-block ratio ratio-1x1'>
-<img class='lazyload' expr:alt='data:commentLevel1.author' expr:data-src='data:commentLevel1.authorAvatarSrc' expr:title='data:commentLevel1.author' loading='lazy' src='data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='/>
+<img class='lazyload' expr:alt='data:commentLevel1.author' expr:data-src='data:commentLevel1.authorAvatarSrc' expr:title='data:commentLevel1.author' loading='lazy' decoding='async' src='data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='/>
 </div>
 </div>
 <div class='avatar-name col'>
@@ -1907,7 +1913,7 @@ width: 50%;
 <span class='d-inline-block fw-light text-secondary fs-8'><data:commentLevel1.timestamp/></span>
 </div>
 <span expr:class='&quot;delete-comment &quot; + data:commentLevel1.adminClass'>
-<a aria-label='Delete' class='btn btn-sm jt-btn-light rounded-pill jt-icon-center' expr:href='data:commentLevel1.deleteUrl' rel='nofollow noopener noreferrer' target='_blank'><svg aria-hidden='true' class='jt-icon'><use xlink:href='#i-close'/></svg></a>
+<a aria-label='حذف' class='btn btn-sm jt-btn-light rounded-pill jt-icon-center' expr:href='data:commentLevel1.deleteUrl' rel='nofollow noopener noreferrer' target='_blank'><svg aria-hidden='true' class='jt-icon'><use xlink:href='#i-close'/></svg></a>
 </span>
 </div>
 <div class='comment-content text-break fs-7 jt-bg-light p-3 rounded mb-3'><p class='mb-0'><b:eval expr='data:commentLevel1.body snippet { links: false }'/></p></div>
@@ -1922,7 +1928,7 @@ width: 50%;
 <div class='comment-header position-relative d-flex mb-2'>
 <div class='avatar-image me-3 mt-1' style='width:35px'>
 <div class='rounded-pill jt-bg-light overflow-hidden d-block ratio ratio-1x1'>
-<img class='lazyload' expr:alt='data:commentLevel2.author' expr:data-src='data:commentLevel2.authorAvatarSrc' expr:title='data:commentLevel2.author' loading='lazy' src='data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='/>
+<img class='lazyload' expr:alt='data:commentLevel2.author' expr:data-src='data:commentLevel2.authorAvatarSrc' expr:title='data:commentLevel2.author' loading='lazy' decoding='async' src='data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='/>
 </div>
 </div>
 <div class='avatar-name col'>
@@ -1935,7 +1941,7 @@ width: 50%;
 <span class='d-inline-block fw-light text-secondary fs-8'><data:commentLevel2.timestamp/></span>
 </div>
 <span expr:class='&quot;delete-comment &quot; + data:commentLevel2.adminClass'>
-<a aria-label='Delete' class='btn btn-sm jt-btn-light rounded-pill jt-icon-center' expr:href='data:commentLevel2.deleteUrl' rel='nofollow noopener noreferrer' target='_blank'><svg aria-hidden='true' class='jt-icon'><use xlink:href='#i-close'/></svg></a>
+<a aria-label='حذف' class='btn btn-sm jt-btn-light rounded-pill jt-icon-center' expr:href='data:commentLevel2.deleteUrl' rel='nofollow noopener noreferrer' target='_blank'><svg aria-hidden='true' class='jt-icon'><use xlink:href='#i-close'/></svg></a>
 </span>
 </div>
 <div class='comment-content text-break fs-7 jt-bg-light p-3 rounded mb-3'><p class='mb-0'><b:eval expr='data:commentLevel2.body snippet { links: false }'/></p></div>
@@ -2049,7 +2055,7 @@ width: 50%;
 <div class='d-flex p-3'>
 <div class='author-thumbnail me-3 col-2' style='max-width:70px'>
 <div class='rounded-pill overflow-hidden ratio ratio-1x1'>
-<img class='object-cover lazyload' expr:alt='data:post.author.name' expr:data-src='data:post.author.authorPhoto.image' loading='lazy' src='data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='/>
+<img class='object-cover lazyload' expr:alt='data:post.author.name' expr:data-src='data:post.author.authorPhoto.image' loading='lazy' decoding='async' src='data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='/>
 </div>
 </div>
 <div class='align-self-center col'>
@@ -2061,7 +2067,7 @@ width: 50%;
 </b:if>
 </article>
 <div expr:class='&quot;position-fixed start-0 top-50 &quot; + data:post.adminClass'>
-<a class='d-block btn btn-sm jt-btn-light rounded-0' expr:href='&quot;https://www.blogger.com/blog/posts/&quot; + data:blog.blogId' rel='nofollow noopener noreferrer' target='_blank' title='Dashboard'><svg aria-hidden='true' class='jt-icon'><use xlink:href='#i-menu'/></svg></a><a class='d-block btn btn-sm jt-btn-light rounded-0' expr:href='&quot;https://www.blogger.com/blog/post/edit/&quot; + data:blog.blogId + &quot;/&quot; + data:post.id' rel='nofollow noopener noreferrer' target='_blank' title='Edit post'><svg aria-hidden='true' class='jt-icon'><use xlink:href='#i-edit'/></svg></a>
+<a class='d-block btn btn-sm jt-btn-light rounded-0' expr:href='&quot;https://www.blogger.com/blog/posts/&quot; + data:blog.blogId' rel='nofollow noopener noreferrer' target='_blank' title='لوحة التحكم'><svg aria-hidden='true' class='jt-icon'><use xlink:href='#i-menu'/></svg></a><a class='d-block btn btn-sm jt-btn-light rounded-0' expr:href='&quot;https://www.blogger.com/blog/post/edit/&quot; + data:blog.blogId + &quot;/&quot; + data:post.id' rel='nofollow noopener noreferrer' target='_blank' title='تعديل المقال'><svg aria-hidden='true' class='jt-icon'><use xlink:href='#i-edit'/></svg></a>
 </div>
     </b:includable>
     <b:includable id='JetPage' var='post'>
@@ -2074,7 +2080,7 @@ width: 50%;
 </div>
 </article>
 <div expr:class='&quot;position-fixed start-0 top-50 &quot; + data:post.adminClass'>
-<a class='d-block btn btn-sm jt-btn-light rounded-0' expr:href='&quot;https://www.blogger.com/blog/pages/&quot; + data:blog.blogId' rel='nofollow noopener noreferrer' target='_blank' title='Dashboard'><svg aria-hidden='true' class='jt-icon'><use xlink:href='#i-menu'/></svg></a><a class='d-block btn btn-sm jt-btn-light rounded-0' expr:href='&quot;https://www.blogger.com/blog/page/edit/&quot; + data:blog.blogId + &quot;/&quot; + data:post.id' rel='nofollow noopener noreferrer' target='_blank' title='Edit post'><svg aria-hidden='true' class='jt-icon'><use xlink:href='#i-edit'/></svg></a>
+<a class='d-block btn btn-sm jt-btn-light rounded-0' expr:href='&quot;https://www.blogger.com/blog/pages/&quot; + data:blog.blogId' rel='nofollow noopener noreferrer' target='_blank' title='لوحة التحكم'><svg aria-hidden='true' class='jt-icon'><use xlink:href='#i-menu'/></svg></a><a class='d-block btn btn-sm jt-btn-light rounded-0' expr:href='&quot;https://www.blogger.com/blog/page/edit/&quot; + data:blog.blogId + &quot;/&quot; + data:post.id' rel='nofollow noopener noreferrer' target='_blank' title='تعديل المقال'><svg aria-hidden='true' class='jt-icon'><use xlink:href='#i-edit'/></svg></a>
 </div>
     </b:includable>
 	<b:includable id='JetRelatedPost' var='post'>
@@ -2121,19 +2127,19 @@ width: 50%;
       <form class='contact-form-blogger'>
         <div class='contact-form-wrap row'>
           <div class='col-12 mb-3'>
-            <label class='form-label fs-7 fw-bold' expr:for='&quot;field-name_&quot; + data:widget.instanceId'>Your Name</label>
-            <input class='form-control bg-transparent jt-border-light text-reset' expr:id='&quot;field-name_&quot; + data:widget.instanceId' name='name' placeholder='Enter Name' required='' type='text'/>
+            <label class='form-label fs-7 fw-bold' expr:for='&quot;field-name_&quot; + data:widget.instanceId'>الاسم</label>
+            <input class='form-control bg-transparent jt-border-light text-reset' expr:id='&quot;field-name_&quot; + data:widget.instanceId' name='name' placeholder='أدخل الاسم' required='' type='text'/>
           </div>
           <div class='col-12 mb-3'>
-            <label class='form-label fs-7 fw-bold' expr:for='&quot;field-email_&quot; + data:widget.instanceId'>Email Address</label>
-            <input class='form-control bg-transparent jt-border-light text-reset' expr:id='&quot;field-email_&quot; + data:widget.instanceId' name='email' placeholder='Enter Email' required='' type='email'/>
+            <label class='form-label fs-7 fw-bold' expr:for='&quot;field-email_&quot; + data:widget.instanceId'>البريد الإلكتروني</label>
+            <input class='form-control bg-transparent jt-border-light text-reset' expr:id='&quot;field-email_&quot; + data:widget.instanceId' name='email' placeholder='أدخل البريد الإلكتروني' required='' type='email'/>
           </div>
           <div class='col-12 mb-3'>
-            <label class='form-label fs-7 fw-bold' expr:for='&quot;field-message_&quot; + data:widget.instanceId'>Message</label>
-            <textarea class='form-control bg-transparent jt-border-light text-reset' expr:id='&quot;field-message_&quot; + data:widget.instanceId' name='message' placeholder='Enter Message' required='' rows='3'/>
+            <label class='form-label fs-7 fw-bold' expr:for='&quot;field-message_&quot; + data:widget.instanceId'>الرسالة</label>
+            <textarea class='form-control bg-transparent jt-border-light text-reset' expr:id='&quot;field-message_&quot; + data:widget.instanceId' name='message' placeholder='أدخل الرسالة' required='' rows='3'/>
           </div>
           <div class='col-12 mb-3'>
-            <button class='btn btn-sm fw-bold py-2 px-5 jt-btn-primary' type='submit'>SEND</button>
+            <button class='btn btn-sm fw-bold py-2 px-5 jt-btn-primary' type='submit'>إرسال</button>
           </div>
         </div>
         <div class='contact-form-msg d-none border border-3 rounded text-center p-3 fs-7' data-error='Message failed to send. Please try again an hour later.' data-success='Thank you message sent successfully.'>
@@ -2147,7 +2153,7 @@ width: 50%;
         <div class='overflow-hidden position-relative jt-bg-white'>
           <b:class cond='data:title contains &quot;#&quot;' name='border-end border-bottom jt-border-light'/>
           <div class='bg-dark ratio ratio-4x3'>
-            <img class='lazyload' expr:alt='data:caption' expr:data-src='data:sourceUrl' loading='lazy' src='data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='/>
+            <img class='lazyload' expr:alt='data:caption' expr:data-src='data:sourceUrl' loading='lazy' decoding='async' src='data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='/>
             <b:tag class='image-content position-absolute d-flex justify-content-center align-items-center' cond='data:caption or data:link' expr:name='data:caption ? &quot;div&quot; : &quot;a&quot;'>
               <b:attr cond='!data:caption' name='href' value='data:link'/> 
               <b:attr cond='data:caption' name='style' value='background:linear-gradient(to top, rgba(0, 0, 0, 0.55) 0%, rgba(77, 77, 77, 0) 100%)'/>
